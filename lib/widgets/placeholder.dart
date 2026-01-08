@@ -2,9 +2,10 @@ import 'package:bin2dec/constants/app_color.dart';
 import 'package:flutter/material.dart';
 
 class AppPlaceholder extends StatefulWidget {
-
+  final Color textColor;
   const AppPlaceholder({
-    super.key,});
+    super.key,
+    required this.textColor});
 
   @override
   State<AppPlaceholder> createState() => _AppPlaceholderState();
@@ -20,7 +21,7 @@ class _AppPlaceholderState extends State<AppPlaceholder> {
         fillColor: AppColor.white,
         hintText: 'Value',
         hintStyle: TextStyle(
-          color: AppColor.lightPurple,
+          color: widget.textColor,
           
         ),
         focusedBorder: OutlineInputBorder(

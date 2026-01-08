@@ -53,7 +53,7 @@ class _BinaryToDecimalScreenState extends State<BinaryToDecimalScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(),
+                  AppPlaceholder(textColor: AppColor.lightPurple,),
                   SizedBox(
                     height: Dimensions.heightFactor*24,
                   ),
@@ -64,7 +64,7 @@ class _BinaryToDecimalScreenState extends State<BinaryToDecimalScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(),
+                  AppPlaceholder(textColor: AppColor.lightPurple,),
                 ],
               ),
             ),
