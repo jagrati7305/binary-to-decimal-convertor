@@ -8,13 +8,15 @@ class Button extends StatefulWidget {
   final double? iconsize;
   final double? numsize;
   final Color? numcolor;
+  final TextEditingController textEditingController;
   const Button({
     super.key,
     required this.num,
     this.icon,
     this.iconsize=24,
     this.numcolor,
-    this.numsize=36
+    this.numsize=36,
+    required this.textEditingController
     });
 
   @override
@@ -22,10 +24,34 @@ class Button extends StatefulWidget {
 }
 
 class _ButtonState extends State<Button> {
+  void _onNumberTap(String num,TextEditingController textEditingController){
+    setState(() {
+      if(textEditingController.text.length<8){
+
+        if(num == 'Delete'){
+          if(textEditingController.text.isEmpty!=true){
+            textEditingController.text=textEditingController.text.substring(0,textEditingController.text.length-1);
+          }
+        }else if(num == 'Switch'){
+          //switch the page
+        }else{
+          textEditingController.text +=num;
+        }
+      }else{
+        if(num == 'Delete'){
+          if(textEditingController.text.isEmpty!=true){
+            textEditingController.text=textEditingController.text.substring(0,textEditingController.text.length-1);
+          }
+        }
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        _onNumberTap(widget.num, widget.textEditingController);
+      },
       child: CircleAvatar(
         radius: Dimensions.widthFactor*40,
         backgroundColor: AppColor.white,

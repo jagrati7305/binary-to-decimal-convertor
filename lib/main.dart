@@ -1,4 +1,5 @@
 import 'package:bin2dec/constants/dimensions.dart';
+import 'package:bin2dec/screens/binary_to_decimal_screen.dart';
 import 'package:bin2dec/screens/decimal_to_binary_screen.dart';
 import 'package:flutter/material.dart';
 

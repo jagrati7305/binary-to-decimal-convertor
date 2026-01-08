@@ -1,5 +1,6 @@
 import 'package:bin2dec/constants/app_color.dart';
 import 'package:bin2dec/constants/dimensions.dart';
+import 'package:bin2dec/functions/decimal_to_binary.dart';
 import 'package:bin2dec/widgets/decimal_to_binary_numpad.dart';
 import 'package:bin2dec/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,9 @@ class DecimalToBinaryScreen extends StatefulWidget {
 }
 
 class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
+  final TextEditingController decimalTextEditingController = TextEditingController();
+  final TextEditingController toBinaryTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +57,7 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(textColor: AppColor.placeholderColorDark,),
+                  AppPlaceholder(textColor: AppColor.placeholderColorDark,textEditingController: decimalTextEditingController,),
                   SizedBox(
                     height: Dimensions.heightFactor*24,
                   ),
@@ -64,14 +68,21 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(textColor: AppColor.darkPurple,),
+                  AppPlaceholder(textColor: AppColor.darkPurple,textEditingController: toBinaryTextEditingController,),
                 ],
               ),
             ),
             SizedBox(
               height: Dimensions.heightFactor*24,
             ),
-            ElevatedButton(onPressed: (){}, 
+            ElevatedButton(onPressed: (){
+              setState(() {
+               if(decimalTextEditingController.text.isEmpty!=true){
+                int conversionAns = decimalTobinary(decimalTextEditingController.text);
+                toBinaryTextEditingController.text = conversionAns.toString();
+              }               
+              });
+            }, 
               style:ElevatedButton.styleFrom(
                 backgroundColor: AppColor.placeholderColorDark,
                 shape: RoundedRectangleBorder(
@@ -99,7 +110,7 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                 color: AppColor.placeholderColorDark,
                 borderRadius: BorderRadius.circular(4)
               ),
-              child: DecimalToBinaryNumpad(),
+              child: DecimalToBinaryNumpad(decimalTextEditingController: decimalTextEditingController,),
             )
           ],
         ),

@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 
 class AppPlaceholder extends StatefulWidget {
   final Color textColor;
+  final TextEditingController? textEditingController;
+  final bool isCovertedValuePlaceholderClicked;
   const AppPlaceholder({
     super.key,
-    required this.textColor});
+    required this.textColor,
+    this.textEditingController,
+    this.isCovertedValuePlaceholderClicked = false});
 
   @override
   State<AppPlaceholder> createState() => _AppPlaceholderState();
@@ -15,6 +19,7 @@ class _AppPlaceholderState extends State<AppPlaceholder> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.textEditingController,
       keyboardType: TextInputType.none,
       decoration: InputDecoration(
         filled: true,

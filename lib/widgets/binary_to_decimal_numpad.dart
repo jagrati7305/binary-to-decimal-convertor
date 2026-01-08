@@ -3,7 +3,9 @@ import 'package:bin2dec/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class BinaryToDecimalNumpad extends StatefulWidget {
-  const BinaryToDecimalNumpad({super.key});
+  final TextEditingController binaryTextEditingController;
+  const BinaryToDecimalNumpad({super.key,
+  required this.binaryTextEditingController});
 
   @override
   State<BinaryToDecimalNumpad> createState() => _BinaryToDecimalNumpadState();
@@ -18,15 +20,15 @@ class _BinaryToDecimalNumpadState extends State<BinaryToDecimalNumpad> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: '0',numcolor: AppColor.lightPurple,),
-            Button(num: '1',numcolor: AppColor.lightPurple)
+            Button(num: '0',numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,),
+            Button(num: '1',numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,)
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.lightPurple),
-            Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.lightPurple),
+            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,),
+            Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,),
             
           ],
         )
