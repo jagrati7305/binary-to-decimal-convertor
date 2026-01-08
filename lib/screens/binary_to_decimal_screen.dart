@@ -1,5 +1,7 @@
 import 'package:bin2dec/constants/app_color.dart';
 import 'package:bin2dec/constants/dimensions.dart';
+import 'package:bin2dec/widgets/binary_to_decimal_numpad.dart';
+import 'package:bin2dec/widgets/button.dart';
 import 'package:bin2dec/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,18 @@ class _BinaryToDecimalScreenState extends State<BinaryToDecimalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Color(0xFFEBF2FA),
+        title: Text(
+          'Bin2Dec',
+          style: TextStyle(
+            color: AppColor.placeholderColorLight,
+            fontWeight: FontWeight.bold,
+            fontSize: 24
+          ),
+        ),
+      ),
       body: Container(
         padding: EdgeInsets.only(left: Dimensions.widthFactor*32,right: Dimensions.widthFactor*32),
         decoration: BoxDecoration(
@@ -77,7 +90,19 @@ class _BinaryToDecimalScreenState extends State<BinaryToDecimalScreen> {
                 ),
               ),
               ),
-            
+            SizedBox(
+              height: Dimensions.heightFactor*24,
+            ), 
+            Container(
+              padding: EdgeInsets.only(left: Dimensions.widthFactor*24,right: Dimensions.widthFactor*24),
+              width: Dimensions.widthFactor*326,
+              height: Dimensions.heightFactor*225,
+              decoration: BoxDecoration(
+                color: AppColor.placeholderColorLight,
+                borderRadius: BorderRadius.circular(4)
+              ),
+              child: BinaryToDecimalNumpad(),
+            )
           ],
 
         ),
