@@ -6,11 +6,15 @@ class Button extends StatefulWidget {
   final String num;
   final IconData ?icon;
   final double? iconsize;
+  final double? numsize;
+  final Color? numcolor;
   const Button({
     super.key,
     required this.num,
     this.icon,
-    this.iconsize=24
+    this.iconsize=24,
+    this.numcolor,
+    this.numsize=36
     });
 
   @override
@@ -29,13 +33,13 @@ class _ButtonState extends State<Button> {
         Text(
           widget.num,
           style: TextStyle(
-            color: AppColor.lightPurple,
+            color: widget.numcolor,
             fontWeight: FontWeight.w700,
-            fontSize: 36
+            fontSize: widget.numsize
           ),
         ):Icon(
           widget.icon,
-          color: AppColor.lightPurple,
+          color: widget.numcolor,
           size: widget.iconsize,
         ),
       ),
