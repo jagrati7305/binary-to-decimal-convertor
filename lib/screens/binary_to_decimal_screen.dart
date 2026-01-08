@@ -1,7 +1,6 @@
 import 'package:bin2dec/constants/app_color.dart';
 import 'package:bin2dec/constants/dimensions.dart';
 import 'package:bin2dec/widgets/binary_to_decimal_numpad.dart';
-import 'package:bin2dec/widgets/button.dart';
 import 'package:bin2dec/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 

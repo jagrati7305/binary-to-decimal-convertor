@@ -1,3 +1,4 @@
+import 'package:bin2dec/constants/app_color.dart';
 import 'package:bin2dec/widgets/button.dart';
 import 'package:flutter/material.dart';
 
@@ -17,15 +18,15 @@ class _BinaryToDecimalNumpadState extends State<BinaryToDecimalNumpad> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: '0'),
-            Button(num: '1')
+            Button(num: '0',numcolor: AppColor.lightPurple,),
+            Button(num: '1',numcolor: AppColor.lightPurple)
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,),
-            Button(num: 'Delete',icon: Icons.backspace,),
+            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.lightPurple),
+            Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.lightPurple),
             
           ],
         )
