@@ -57,7 +57,7 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(textColor: AppColor.placeholderColorDark,textEditingController: decimalTextEditingController,),
+                  AppPlaceholder(textColor: AppColor.darkPurple,textEditingController: decimalTextEditingController,hinttext: 'Enter Decimal Value',),
                   SizedBox(
                     height: Dimensions.heightFactor*24,
                   ),
@@ -68,7 +68,7 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  AppPlaceholder(textColor: AppColor.darkPurple,textEditingController: toBinaryTextEditingController,),
+                  AppPlaceholder(textColor: AppColor.darkPurple,textEditingController: toBinaryTextEditingController,readonly: true,hinttext: 'Answer',),
                 ],
               ),
             ),
@@ -80,6 +80,8 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                if(decimalTextEditingController.text.isEmpty!=true){
                 int conversionAns = decimalTobinary(decimalTextEditingController.text);
                 toBinaryTextEditingController.text = conversionAns.toString();
+              }else{
+                toBinaryTextEditingController.text='';
               }               
               });
             }, 
