@@ -90,7 +90,8 @@ class _DecimalToBinaryScreenState extends State<DecimalToBinaryScreen> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadiusGeometry.circular(4)
                 ),
-                fixedSize: Size.fromWidth(Dimensions.widthFactor*326)
+                fixedSize: Size.fromWidth(Dimensions.widthFactor*326),
+                elevation: 0
               ),
               
               child: Text(

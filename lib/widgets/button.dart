@@ -12,6 +12,7 @@ class Button extends StatefulWidget {
   final Color? numcolor;
   final TextEditingController textEditingController;
   final bool onBin2dec;
+  final int maxLength;
   const Button({
     super.key,
     required this.num,
@@ -20,7 +21,8 @@ class Button extends StatefulWidget {
     this.numcolor,
     this.numsize=36,
     required this.textEditingController,
-    this.onBin2dec=true
+    this.onBin2dec=true,
+    this.maxLength=8
     });
 
   @override
@@ -30,7 +32,7 @@ class Button extends StatefulWidget {
 class _ButtonState extends State<Button> {
   void _onNumberTap(String num,TextEditingController textEditingController,bool onBin2dec){
     setState(() {
-      if(textEditingController.text.length<8){
+      if(textEditingController.text.length<widget.maxLength){
 
         if(num == 'Delete'){
           if(textEditingController.text.isEmpty!=true){

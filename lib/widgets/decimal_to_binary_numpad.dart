@@ -21,33 +21,33 @@ class _DecimalToBinaryNumpadState extends State<DecimalToBinaryNumpad> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: '1',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '2',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '3',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
+            Button(num: '1',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '2',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '3',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: '4',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '5',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '6',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
+            Button(num: '4',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '5',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '6',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
           ],
         ),  
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: '7',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '8',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: '9',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
+            Button(num: '7',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '8',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: '9',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
           ],
         ), 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,onBin2dec: false,),
-            Button(num: '0',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
-            Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,),
+            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,onBin2dec: false,maxLength: 5,),
+            Button(num: '0',numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
+            Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.darkPurple,numsize: 28,textEditingController: widget.decimalTextEditingController,maxLength: 5,),
           ],
         ),       
       ],
