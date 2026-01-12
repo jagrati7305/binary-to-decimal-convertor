@@ -27,7 +27,7 @@ class _BinaryToDecimalNumpadState extends State<BinaryToDecimalNumpad> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,),
+            Button(num: 'Switch',icon: Icons.swap_vert_rounded,iconsize: 36,numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,onBin2dec: true,),
             Button(num: 'Delete',icon: Icons.backspace,numcolor: AppColor.lightPurple,textEditingController: widget.binaryTextEditingController,),
             
           ],

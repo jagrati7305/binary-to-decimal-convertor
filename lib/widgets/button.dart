@@ -52,6 +52,11 @@ class _ButtonState extends State<Button> {
           if(textEditingController.text.isEmpty!=true){
             textEditingController.text=textEditingController.text.substring(0,textEditingController.text.length-1);
           }
+        }else if(num == 'Switch'){
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context)=> onBin2dec==true?DecimalToBinaryScreen():BinaryToDecimalScreen())
+            );
         }
       }
     });
