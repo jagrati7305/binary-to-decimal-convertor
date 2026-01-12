@@ -13,11 +13,29 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool _dec2binvisible = false;
+  double _bin2decopacity = 1.0;
+  double _dec2binopacity = 0.0;
+
+
   @override
   void initState(){
     super.initState();
+    // wait for first frame, then fade out
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+         _bin2decopacity = 0.0;
 
-    Timer(Duration(seconds: 2), (){
+        Future.delayed(const Duration(seconds: 2),(){
+          setState(() {
+             _dec2binvisible=true;
+             _dec2binopacity = 1.0;
+          });
+        });
+      });
+    });
+    
+    Timer(Duration(seconds: 5), (){
       Navigator.pushReplacement(context
       , MaterialPageRoute(builder: (context)=>BinaryToDecimalScreen())
       );
@@ -81,13 +99,29 @@ class _SplashScreenState extends State<SplashScreen> {
               SizedBox(
                 height: 8,
               ),
-              Text(
-                'Bin2Dec',
-                style: TextStyle(
-                  color: AppColor.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24
-                ),
+              SizedBox(
+                child:_dec2binvisible==false?AnimatedOpacity(
+                  opacity: _bin2decopacity,
+                  duration: Duration(seconds: 1),
+                  child:Text(
+                    'Bin2Dec',
+                    style: TextStyle(
+                      color: AppColor.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24
+                    ),
+                  )
+                ):AnimatedOpacity(
+                  opacity: _dec2binopacity, 
+                  duration: Duration(seconds: 1),
+                  child: Text(
+                    'Dec2Bin',
+                    style: TextStyle(
+                      color: AppColor.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24)
+                  ),
+                  ),
               )
             ],
           ),
