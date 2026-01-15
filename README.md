@@ -1,16 +1,16 @@
-# bin2dec
+# 🔢 Binary ↔ Decimal Converter
+<p align="center">
+  <img src = "assets/banner.png" alt = "Banner">
+</p>
 
-A new Flutter project.
+A simple and efficient application that converts **Binary numbers to Decimal** and **Decimal numbers to Binary**.
+<br>
+This project is designed to help beginners understand number system conversions.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Convert Binary to Decimal
+- Convert Decimal to Binary
+- Fast and accurate conversions
+- Beginner-friendly logic
+- Clean and simple UI (if Flutter-based)
